@@ -6,6 +6,8 @@ import ProductGallery from "@/components/ProductGallery";
 import ProductDescription from "@/components/ProductDescription";
 import SellerProfile from "@/components/SellerProfile";
 import ProductDetails from "@/components/ProductDetails";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 type Props = {
   params: { id: string };
@@ -37,13 +39,39 @@ export default async function Products({ params }: Props) {
   if (!info) return notFound();
 
   return (
-    <main className="flex flex-col space-y-5 min-h-screen items-center justify-center bg-gray-100">
-      <PurchaseInfo product={info.product} seller={info.seller} />
-      <PaymentMethod />
-      <ProductGallery images={info.product.images} />
-      <ProductDescription description={info.product.description} />
-      <SellerProfile seller={info.seller} />
-      <ProductDetails product={info.product} reviews={info.reviews}/>
-    </main>
+  <div className="flex justify-center items-center min-h-screen bg-gray-100 p-8">
+    <Card className="w-full max-w-7xl bg-white rounded-2xl rounded-md shadow-md p-6">
+      <CardContent className="grid grid-cols-1 md:grid-cols-[800px_1fr] gap-6">
+        {/* Primera columna */}
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex-1">
+              <ProductGallery images={info.product.images} />
+            </div>
+            <div className="flex-1">
+              <ProductDetails product={info.product} reviews={info.reviews}/>
+            </div>
+          </div>
+          <Separator />
+          <div>
+            <ProductDescription description={info.product.description} />
+          </div>
+        </div>
+
+        {/* Segunda columna */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <PurchaseInfo product={info.product} seller={info.seller} />
+          </div>
+          <div>
+            <SellerProfile seller={info.seller} />
+          </div>
+          <div>
+            <PaymentMethod />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  </div>
   );
 }

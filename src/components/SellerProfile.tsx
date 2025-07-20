@@ -22,7 +22,7 @@ type Props = {
 
 export default function SellerProfile({seller}: Props) {
   return (
-    <Card className="w-full max-w-xs p-4">
+    <Card className="w-full max-w-xs mx-auto shadow-none p-4 space-y-4">
       <CardContent className="p-4 space-y-4">
         {/* Header */}
         <div className="flex items-center gap-3">
