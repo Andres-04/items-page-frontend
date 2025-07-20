@@ -1,3 +1,5 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { notFound } from 'next/navigation';
 import { Metadata } from "next";
 import PurchaseInfo from "@/components/PurchaseInfo";
@@ -6,8 +8,7 @@ import ProductGallery from "@/components/ProductGallery";
 import ProductDescription from "@/components/ProductDescription";
 import SellerProfile from "@/components/SellerProfile";
 import ProductDetails from "@/components/ProductDetails";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import Reviews from "@/components/Reviews";
 
 type Props = {
   params: { id: string };
@@ -55,6 +56,10 @@ export default async function Products({ params }: Props) {
           <Separator />
           <div>
             <ProductDescription description={info.product.description} />
+          </div>
+          <Separator />
+          <div>
+            <Reviews reviews={info.reviews}/>
           </div>
         </div>
 
