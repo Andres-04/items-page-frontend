@@ -1,6 +1,6 @@
 "use client"
 
-import { Star } from "lucide-react";
+import StarRating from "@/components/StarRating";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -41,18 +41,7 @@ export default function ProductDetails({ product, reviews }: Props) {
       {/* Rating */}
       <div className="flex items-center gap-1 text-sm">
         <span>{reviews.score}</span>
-        <div className="flex text-blue-600">
-          {[...Array(5)].map((_, index) => (
-            <Star
-              key={index}
-              className={`h-4 w-4 ${
-                index < Math.round(reviews.score)
-                  ? "fill-blue-600 text-blue-600"
-                  : "text-muted-foreground"
-              }`}
-            />
-          ))}
-        </div>
+        <StarRating rating={reviews.score} />
         <span className="text-muted-foreground">({reviews.total})</span>
       </div>
 

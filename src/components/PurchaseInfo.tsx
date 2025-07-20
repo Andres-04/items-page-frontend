@@ -9,6 +9,7 @@ type Seller = {
 
 type Product = {
   stock: number;
+  free_shipping: boolean;
 };
 
 type Props = {
@@ -21,7 +22,7 @@ export default function PurchaseInfo({ product, seller }: Props) {
     <Card className="w-full max-w-xs mx-auto shadow-none p-4 space-y-4">
       <CardHeader>
         <p className="text-sm">
-          <span className="text-green-600 font-bold">Envío gratis</span>  a todo el país
+          <span className="text-green-600 font-bold">Envío{product.free_shipping ? " gratis" : ""}</span>  a todo el país
         </p>
         
         <p className="text-xs text-muted-foreground">
