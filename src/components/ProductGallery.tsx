@@ -12,7 +12,6 @@ export default function ProductGallery({ images }: Props) {
 
   return (
     <div className="flex gap-4">
-      {/* Miniaturas a la izquierda */}
       <div className="flex flex-col gap-2">
         {images.map((img, index) => (
           <button
@@ -33,7 +32,6 @@ export default function ProductGallery({ images }: Props) {
         ))}
       </div>
 
-      {/* Imagen principal a la derecha */}
       <div className="w-[410px] h-[500px] rounded overflow-hidden flex items-center justify-center">
         <Image
           src={selected}

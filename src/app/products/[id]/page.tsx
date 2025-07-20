@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import PurchaseInfo from "@/components/PurchaseInfo";
 import PaymentMethod from "@/components/PaymentMethod";
 import ProductGallery from "@/components/ProductGallery";
+import ProductDescription from "@/components/ProductDescription";
+import SellerProfile from "@/components/SellerProfile";
+import ProductDetails from "@/components/ProductDetails";
 
 type Props = {
   params: { id: string };
@@ -38,6 +41,9 @@ export default async function Products({ params }: Props) {
       <PurchaseInfo product={info.product} seller={info.seller} />
       <PaymentMethod />
       <ProductGallery images={info.product.images} />
+      <ProductDescription description={info.product.description} />
+      <SellerProfile seller={info.seller} />
+      <ProductDetails product={info.product} reviews={info.reviews}/>
     </main>
   );
 }
