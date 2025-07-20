@@ -8,7 +8,6 @@ export default async function Home() {
   return ( 
     <main className="flex flex-col justify-center items-center min-h-screen bg-gray-50">
       <h1>Mensaje: {msg.message}</h1>
-      <PaymentMethod />
     </main>
   );
 }
