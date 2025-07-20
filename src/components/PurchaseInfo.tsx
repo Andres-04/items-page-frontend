@@ -18,7 +18,7 @@ type Props = {
 
 export default function PurchaseInfo({ product, seller }: Props) {
   return (
-    <Card className="w-full max-w-xs mx-auto p-4 space-y-4">
+    <Card className="w-full max-w-xs mx-auto shadow-none p-4 space-y-4">
       <CardHeader>
         <p className="text-sm">
           <span className="text-green-600 font-bold">Envío gratis</span>  a todo el país
