@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Items Page
 
-## Getting Started
+Este proyecto es un **frontend construido con Next.js**, utilizando **TailwindCSS** y **Shadcn/UI** para estilos y componentes.  
+Permite visualizar productos y sus reseñas de forma simple y rápida.
 
-First, run the development server:
+---
 
+## Instalación de dependencias  
+
+Asegúrate de tener instalado **Node.js** (versión recomendada 20.x o superior).  
+
+* Instala las dependencias:  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Iniciar el proyecto  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Modo desarrollo:
+```bash
+npm run dev
+```
+Abre el navegador en [http://localhost:3000](http://localhost:3000)  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Vista de Productos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para ver la página de detalle de producto debes acceder a la siguiente ruta:  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+http://localhost:3000/products/[id]
+```
 
-## Deploy on Vercel
+### IDs disponibles para prueba:  
+- `ML0001`
+- `ML0002`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Ejemplos:
+```
+http://localhost:3000/products/ML0001
+http://localhost:3000/products/ML0002
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Comandos útiles  
+
+| Acción             | Comando        |
+|--------------------|----------------|
+| Iniciar dev        | `npm run dev`  |
+| Correr tests       | `npm run test` |
+| Generar build prod | `npm run build`|
+
+---
+
+## Estructura del proyecto
+
+```
+/src
+  /components     -> Componentes reutilizables
+  /pages          -> Páginas de la app, incluyendo /products/[id]
+  /styles         -> Archivos de estilos globales
+  /lib            -> Utilidades compartidas
+/tests            -> Pruebas unitarias
+```
+
+---
