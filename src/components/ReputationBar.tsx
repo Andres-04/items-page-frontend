@@ -15,6 +15,7 @@ export default function ReputationBar({ level }: Props) {
     <div className="flex gap-1">
       {colors.map((color, index) => (
         <div
+          data-testid="reputation-bar"
           key={index}
           className={`flex-1 transition-all ${
             index + 1 === level

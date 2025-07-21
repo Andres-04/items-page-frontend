@@ -31,7 +31,3 @@ describe('CommentsList', () => {
     expect(screen.getByText('2000-01-01')).toBeInTheDocument();
   });
 });
-
-
-
-
