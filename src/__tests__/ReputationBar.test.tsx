@@ -1,19 +1,8 @@
 import {render, screen} from '@testing-library/react';
 import ReputationBar from '@/components/ReputationBar';
 
-
 describe('ReputationBar', () => {
-  it('should render ReputationBar component', () => {
-    const desc = 'example';
-    render("");
-
-    expect(screen.getByText('')).toBeInTheDocument();
-    expect(screen.getByText('')).toBeInTheDocument();
-  });
-});
-
-describe('ReputationBar', () => {
-  it('debería resaltar el nivel correcto', () => {
+  it('should render according to level', () => {
     const level = 3;
     render(<ReputationBar level={level} />);
     

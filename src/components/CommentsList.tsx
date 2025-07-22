@@ -23,7 +23,7 @@ export default function CommentsList({ reviews }: Props) {
             <p className="text-xs text-gray-400">{item?.date || "2000-01-01"}</p>
           </div>
 
-          {(item?.images?.length || 0 > 0) && (
+          {(item.images.length || 0 > 0) && (
             <div className="flex space-x-2 mt-2">
               {item.images.map((photoUrl, i) => (
                 <img

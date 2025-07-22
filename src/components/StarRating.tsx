@@ -12,6 +12,7 @@ export default function StarRating({ rating }: Props) {
       <div className="flex text-blue-600">
         {[...Array(5)].map((_, index) => (
           <Star
+            data-testid="star-rating"
             key={index}
             className={`h-4 w-4 ${
               index < Math.round(rating)
