@@ -1,6 +1,4 @@
-import { Star, ThumbsUp } from "lucide-react";
 import StarRating from "@/components/StarRating";
-import ReportButton from "@/components/ReportButton";
 import CommentsList from "@/components/CommentsList";
 
 type Review = {

@@ -19,11 +19,11 @@ export default function CommentsList({ reviews }: Props) {
       {reviews.map((item, index) => (
         <div key={index} className="p-4 space-y-2 mt-2">
           <div className="flex justify-between items-center">
-            <StarRating rating={item.score} />
-            <p className="text-xs text-gray-400">{item.date}</p>
+            <StarRating rating={item?.score || 0.0} />
+            <p className="text-xs text-gray-400">{item?.date || "2000-01-01"}</p>
           </div>
 
-          {item.images.length > 0 && (
+          {(item.images.length || 0 > 0) && (
             <div className="flex space-x-2 mt-2">
               {item.images.map((photoUrl, i) => (
                 <img
@@ -36,7 +36,11 @@ export default function CommentsList({ reviews }: Props) {
             </div>
           )}
 
+<<<<<<< HEAD
           <p className="text-sm">{item.comment}</p>
+=======
+          <p className="text-sm">{item?.comment || ""}</p>
+>>>>>>> origin/main
 
           <div className="text-xs text-gray-400 flex justify-between items-center gap-4">
             <button className="flex items-center gap-x-1 border px-2 py-1 rounded-xl text-xs">
